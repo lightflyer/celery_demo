@@ -7,11 +7,11 @@ from aaaa.b.c.celery_app_inatcance import celery_app
 
 # @celery_app.task
 @celery_app.task(name='求和')
-def add(x,y):
+def add(x, y):
     time.sleep(3)
     print(f'{x} + {y} = {x + y}')
     time.sleep(3)
 
 
 if __name__ == '__main__':
-    add(1,2)
+    add.delay(2, 5)

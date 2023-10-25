@@ -4,7 +4,12 @@
 import time
 from aaaa.b.c.celery_app_inatcance import celery_app
 
+
 @celery_app.task(name='sub啊')
-def sub(a,b):
-    print(f'{a} - {b} = {a - b }')
+def sub(a, b):
+    print(f'{a} - {b} = {a - b}')
     time.sleep(4)
+
+
+if __name__ == '__main__':
+    sub.delay(5, 2)
